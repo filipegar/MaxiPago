@@ -1,0 +1,31 @@
+{
+    "name": "filipegar/maxipago",
+    "description": "PHP agnostic implementation for Maxipago Payment Gateway",
+    "type": "library",
+    "require": {
+        "php": "^7.0",
+        "ext-simplexml": "*",
+        "ext-xmlwriter": "*",
+        "ext-hash": "*",
+        "ext-openssl": "*",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filipe Garcia",
+            "email": "epilif09@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Filipegar\\Maxipago\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
