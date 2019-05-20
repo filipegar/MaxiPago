@@ -458,8 +458,8 @@ $merchant = new Merchant("store-id", "token");
 //Crie seu cliente da SDK
 $maxipago = new MaxipagoClient($merchant, Environment::sandbox());
 
-$sale = (new Sale())->setProcessorID(1)->setReferenceNum("IdPedidoNaLoja")
-    ->setFraudCheck(false)->setIpAddress("189.38.95.95")
+$sale = (new RecurringPayment())->setProcessorID(1)->setReferenceNum("IdPedidoNaLoja")
+    ->setIpAddress("189.38.95.95")
     ->setCustomerIdExt('123.456.789-09');
 
 $customer = $sale->billingCustomer()->setName("Fulano da Silva")->setAddress("Rua das Fiandeiras, 123")

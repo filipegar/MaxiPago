@@ -56,7 +56,7 @@ abstract class AbstractRequest
             'defaults' => [
                 'config' => [
                     'curl' => [
-                        CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2
+                        CURLOPT_SSLVERSION => 6
                     ]
                 ]
             ]
