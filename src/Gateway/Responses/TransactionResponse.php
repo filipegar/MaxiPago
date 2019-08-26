@@ -144,7 +144,7 @@ class TransactionResponse
         if (empty($transactionTimestamp)) {
             $this->transactionTimestamp = "";
         } else {
-            $this->transactionTimestamp = (new \DateTime())->setTimestamp((string)$transactionTimestamp);
+            $this->transactionTimestamp = (new \DateTime())->setTimestamp(intval((string)$transactionTimestamp));
         }
         return $this;
     }

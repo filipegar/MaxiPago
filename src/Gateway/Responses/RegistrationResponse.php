@@ -26,7 +26,7 @@ class RegistrationResponse
         $this->command = isset($xml->command) ? (string)$xml->command : null;
         $this->customerId = isset($xml->result->customerId) ? (string)$xml->result->customerId : null;
         $this->token = isset($xml->result->token) ? (string)$xml->result->token : null;
-        $this->time = isset($xml->time) ? (new \DateTime())->setTimestamp(substr((string)$xml->time, 0, -3)) : null;
+        $this->time = isset($xml->time) ? (new \DateTime())->setTimestamp(intval(substr((string)$xml->time, 0, -3))) : null;
     }
 
     /**
