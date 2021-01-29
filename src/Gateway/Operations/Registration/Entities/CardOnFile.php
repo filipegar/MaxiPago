@@ -327,8 +327,8 @@ class CardOnFile implements OutputsVariables
      */
     public function setToken($token)
     {
-        if (strlen($token) !== 12) {
-            throw new \InvalidArgumentException("Token should have 12 chars.");
+        if (strlen($token) <= 24) {
+            throw new \InvalidArgumentException("Token should have until 24 chars.");
         }
 
         $this->token = $token;
