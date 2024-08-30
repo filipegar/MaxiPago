@@ -8,6 +8,7 @@ use Filipegar\Maxipago\Gateway\Operations\Transaction\Order\Entities\PaymentType
 use Filipegar\Maxipago\Gateway\Operations\Transaction\Order\Entities\PaymentTypes\DebitCard;
 use Filipegar\Maxipago\Gateway\Operations\Transaction\Order\Entities\PaymentTypes\OnFile;
 use Filipegar\Maxipago\Gateway\Operations\Transaction\Order\Entities\PaymentTypes\OnlineDebit;
+use Filipegar\Maxipago\Gateway\Operations\Transaction\Order\Entities\PaymentTypes\Pix;
 use Filipegar\Maxipago\Gateway\Traits\ExposesVariables;
 
 class PayType implements OutputsVariables
@@ -19,6 +20,7 @@ class PayType implements OutputsVariables
     private $boleto;
     private $onlineDebit;
     private $onFile;
+    private $pix;
 
     public function creditCard()
     {
@@ -148,5 +150,31 @@ class PayType implements OutputsVariables
         $this->setOnFile($onFile);
 
         return $onFile;
+    }
+
+     /**
+     * @return Pix
+     */
+    public function getPix()
+    {
+        return $this->pix;
+    }
+
+    /**
+     * @param Pix $pix
+     * @return PayType
+     */
+    public function setPix(Pix $pix)
+    {
+        $this->pix = $pix;
+        return $this;
+    }
+
+    public function pix()
+    {
+        $pix = new Pix();
+        $this->setPix($pix);
+
+        return $pix;
     }
 }
