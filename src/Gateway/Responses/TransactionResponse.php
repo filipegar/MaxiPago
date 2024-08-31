@@ -33,6 +33,8 @@ class TransactionResponse
     private $creditCardScheme;
     private $creditCardCountry;
     private $saveOnFile;
+    private $emv;
+    private $imagem_base64;
 
     public static function fromXML(\SimpleXMLElement $xml)
     {
@@ -488,6 +490,28 @@ class TransactionResponse
     public function setSaveOnFile(\SimpleXMLElement $saveOnFile)
     {
         $this->saveOnFile = (array)$saveOnFile;
+        return $this;
+    }
+
+    public function getEmv()
+    {
+        return $this->emv;
+    }
+
+    public function setEmv($emv)
+    {
+        $this->emv = (string)$emv;
+        return $this;
+    }
+
+    public function getImagem_base64()
+    {
+        return $this->imagem_base64;
+    }
+
+    public function setImagem_base64($imagem)
+    {
+        $this->imagem_base64 = (string)$imagem;
         return $this;
     }
 
